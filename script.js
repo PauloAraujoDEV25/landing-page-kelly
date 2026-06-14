@@ -294,25 +294,6 @@ const statObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.7 });
 statObserver.observe(stat);
 
-document.querySelectorAll("img").forEach((image, index) => {
-  image.addEventListener("error", () => {
-    const fallback = index % 2 === 0
-      ? "assets/images/hero-tropical.png"
-      : "assets/images/hero-patio.png";
-    if (!image.src.endsWith(fallback)) image.src = fallback;
-  });
-});
-
-slides.forEach((slide, index) => {
-  const source = slide.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/)?.[1];
-  if (!source) return;
-  const preloader = new Image();
-  preloader.onerror = () => {
-    slide.style.backgroundImage = `url('${index % 2 === 0 ? "assets/images/hero-tropical.png" : "assets/images/hero-patio.png"}')`;
-  };
-  preloader.src = source;
-});
-
 form.addEventListener("submit", event => {
   event.preventDefault();
   const data = new FormData(form);
