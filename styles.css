@@ -29,7 +29,8 @@ img { display: block; width: 100%; }
 }
 .site-header.scrolled { height: 72px; background: rgba(245,241,233,.9); color: var(--ink); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 40px rgba(39,48,41,.05); }
 .brand { display: flex; align-items: center; gap: 13px; }
-.brand-mark { display: grid; place-items: center; width: 39px; height: 39px; border: 1px solid currentColor; font: italic 500 25px var(--serif); }
+.brand-mark { display: block; width: 42px; height: 42px; object-fit: contain; filter: brightness(0) invert(1); transition: filter .4s ease; }
+.site-header.scrolled .brand-mark { filter: none; }
 .brand-name { font: 500 20px/1 var(--serif); letter-spacing: .02em; }
 .brand-name small { display: block; margin-top: 5px; font: 500 8px var(--sans); text-transform: uppercase; letter-spacing: .27em; }
 .main-nav { display: flex; align-items: center; gap: 34px; font-size: 13px; }
