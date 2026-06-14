@@ -133,13 +133,11 @@ slideDots.forEach((dot, index) => dot.addEventListener("click", () => {
   startCarousel();
 }));
 
-hero.addEventListener("mouseenter", () => clearInterval(carouselTimer));
 hero.addEventListener("mouseleave", () => {
   slides.forEach(slide => {
     slide.style.removeProperty("--hero-x");
     slide.style.removeProperty("--hero-y");
   });
-  startCarousel();
 });
 
 hero.addEventListener("mousemove", event => {
