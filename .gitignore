@@ -1,0 +1,4 @@
+.remote-inspect/
+.git-codex/
+Thumbs.db
+.DS_Store
