@@ -173,12 +173,12 @@ h1 em, h2 em { color: var(--sand); font-weight: 500; }
 .modal-close { position: absolute; top: 22px; right: 25px; width: 46px; height: 46px; font-size: 27px; line-height: 1; }
 .modal-arrow { width: 52px; height: 52px; font-size: 19px; }
 
-footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr auto; gap: 40px; align-items: center; padding: 45px 5vw; background: #1b211c; color: #aaa79f; font-size: 10px; }
+footer { display: grid; grid-template-columns: 1fr 1.2fr 1.4fr 1fr; gap: 40px; align-items: center; padding: 45px 5vw; background: #1b211c; color: #aaa79f; font-size: 10px; }
 .footer-brand .brand-logo-frame { width: 112px; height: 92px; }
 .footer-links { display: flex; gap: 20px; }
 .footer-links a { transition: color .25s ease; }
 .footer-links a:hover { color: var(--sand); }
-.footer-credits { display: grid; gap: 7px; text-align: right; }
+.footer-credits { display: grid; gap: 7px; text-align: center; }
 .footer-credits strong { color: var(--sand); font-weight: 500; }
 
 .js-ready [data-reveal] { opacity: 0; transform: translateY(34px); transition: opacity .85s var(--ease), transform .85s var(--ease); }
@@ -228,7 +228,7 @@ footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr auto; gap: 40px; al
   .project-modal figcaption { left: 20px; right: 20px; bottom: 22px; }
   .modal-arrow { width: 42px; height: 48px; }
   footer { grid-template-columns: 1fr; gap: 24px; }
-  .footer-credits { text-align: left; }
+  .footer-credits { text-align: center; }
 }
 
 @media (max-width: 520px) {
