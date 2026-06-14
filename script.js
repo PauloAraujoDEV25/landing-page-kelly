@@ -300,17 +300,28 @@ form.addEventListener("submit", event => {
   const name = String(data.get("nome")).trim().split(" ")[0] || "cliente";
   const button = form.querySelector("button");
   const feedback = form.querySelector(".form-feedback");
+  const message = [
+    "Olá, Kelly! Vim pelo seu site e gostaria de conversar sobre um projeto.",
+    "",
+    `Nome: ${String(data.get("nome")).trim()}`,
+    `E-mail: ${String(data.get("email")).trim()}`,
+    `Telefone / WhatsApp: ${String(data.get("telefone")).trim()}`,
+    `Tipo de projeto: ${String(data.get("tipo")).trim()}`,
+    `Sobre o projeto: ${String(data.get("mensagem")).trim() || "Não informado"}`
+  ].join("\n");
+  const whatsappUrl = `https://wa.me/553496491514?text=${encodeURIComponent(message)}`;
+
   button.disabled = true;
-  button.innerHTML = "Mensagem recebida <span>✓</span>";
+  button.innerHTML = "Abrindo WhatsApp <span>✓</span>";
   button.classList.add("is-sent");
-  feedback.textContent = `Obrigada, ${name}! Retornarei em até um dia útil.`;
-  form.reset();
+  feedback.textContent = `${name}, confirme o envio da mensagem no WhatsApp.`;
+  window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
   window.setTimeout(() => {
     button.disabled = false;
-    button.innerHTML = "Enviar meu projeto <span>↗</span>";
+    button.innerHTML = "Enviar projeto pelo WhatsApp <span>↗</span>";
     button.classList.remove("is-sent");
-  }, 4500);
+  }, 2500);
 });
 
 showSlide(0);
