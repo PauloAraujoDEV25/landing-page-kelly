@@ -42,7 +42,7 @@ let lastFocusedElement;
 document.documentElement.classList.add("js-ready");
 
 const revealGroups = [
-  [".intro .section-label", ".intro-copy", ".intro-stat"],
+  [".intro .section-label", ".intro-copy"],
   [".services .section-label", ".services .eyebrow", ".services h2"],
   [".service-card"],
   [".projects .section-label", ".projects .eyebrow", ".projects h2", ".projects-head > p"],
@@ -274,25 +274,6 @@ document.addEventListener("keydown", event => {
   if (event.key === "ArrowLeft") showProject(activeProject - 1);
   if (event.key === "ArrowRight") showProject(activeProject + 1);
 });
-
-const stat = document.querySelector(".intro-stat strong");
-const statObserver = new IntersectionObserver(entries => {
-  if (!entries[0].isIntersecting) return;
-  if (reduceMotion.matches) {
-    stat.textContent = "+80";
-  } else {
-    const startedAt = performance.now();
-    const animateCount = now => {
-      const elapsed = Math.min((now - startedAt) / 1200, 1);
-      const eased = 1 - Math.pow(1 - elapsed, 3);
-      stat.textContent = `+${Math.round(80 * eased)}`;
-      if (elapsed < 1) requestAnimationFrame(animateCount);
-    };
-    requestAnimationFrame(animateCount);
-  }
-  statObserver.disconnect();
-}, { threshold: 0.7 });
-statObserver.observe(stat);
 
 form.addEventListener("submit", event => {
   event.preventDefault();

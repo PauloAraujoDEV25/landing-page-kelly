@@ -86,16 +86,13 @@ h1 em, h2 em { color: var(--sand); font-weight: 500; }
 .section { position: relative; padding: 130px 8vw; }
 .section-label { display: flex; gap: 18px; color: #888175; font-size: 9px; font-weight: 600; letter-spacing: .23em; text-transform: uppercase; }
 .section-label span { color: var(--ink); }
-.intro { display: grid; grid-template-columns: 20% 1fr 16%; gap: 4vw; align-items: start; background: linear-gradient(135deg, var(--paper) 0%, #f0eadf 100%); }
+.intro { display: grid; grid-template-columns: 20% 1fr; gap: 4vw; align-items: start; background: linear-gradient(135deg, var(--paper) 0%, #f0eadf 100%); }
 .intro h2, .services h2, .projects h2, .process h2 { font-size: clamp(42px, 5vw, 72px); }
 .intro-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 7vw; margin-top: 45px; }
 .intro-columns p { margin: 0; color: #625e56; font-size: 15px; line-height: 1.8; }
 .signature { padding-top: 3px; }
 .signature strong { display: block; font: italic 500 25px var(--serif); }
 .signature span { display: block; margin-top: 8px; color: #8d867b; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
-.intro-stat { padding: 30px 0 0; border-top: 1px solid var(--line); }
-.intro-stat strong { display: block; font: 500 55px var(--serif); }
-.intro-stat span { color: #777166; font-size: 11px; line-height: 1.5; }
 
 .services { overflow: hidden; background: var(--cream); }
 .services::after { content: "K"; position: absolute; right: -2vw; top: -11vw; color: rgba(89,99,83,.045); font: italic 500 30vw/1 var(--serif); pointer-events: none; }
@@ -210,7 +207,6 @@ footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr auto; gap: 40px; al
   .intro, .section-heading, .process { grid-template-columns: 1fr; }
   .intro { gap: 45px; }
   .intro-columns { grid-template-columns: 1fr; gap: 35px; }
-  .intro-stat { max-width: 220px; }
   .service-list { grid-template-columns: 1fr; margin: 50px 0 0; border: 0; }
   .service-card, .service-card:first-child { min-height: 300px; border: 1px solid var(--line); border-bottom: 0; }
   .service-card:last-child { border-bottom: 1px solid var(--line); }
