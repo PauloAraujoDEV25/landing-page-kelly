@@ -34,10 +34,9 @@ button:focus-visible, a:focus-visible, [role="button"]:focus-visible, input:focu
 }
 .site-header.scrolled { height: 72px; background: rgba(245,241,233,.9); color: var(--ink); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); box-shadow: 0 8px 40px rgba(39,48,41,.05); }
 .brand { display: flex; align-items: center; gap: 13px; }
-.brand-mark { display: block; width: 42px; height: 42px; object-fit: contain; filter: brightness(0) invert(1); transition: filter .4s ease; }
-.site-header.scrolled .brand-mark { filter: none; }
-.brand-name { font: 500 20px/1 var(--serif); letter-spacing: .02em; }
-.brand-name small { display: block; margin-top: 5px; font: 500 8px var(--sans); text-transform: uppercase; letter-spacing: .27em; }
+.brand-logo-frame { display: block; width: 98px; height: 82px; overflow: hidden; transition: width .45s var(--ease), height .45s var(--ease); }
+.brand-mark { display: block; width: 100%; height: 100%; object-fit: contain; transform: scale(1.42); }
+.site-header.scrolled .brand-logo-frame { width: 78px; height: 62px; }
 .main-nav { display: flex; align-items: center; gap: 34px; font-size: 13px; }
 .main-nav > a:not(.nav-cta) { position: relative; }
 .main-nav > a:not(.nav-cta)::after { content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 1px; background: currentColor; transition: width .25s; }
@@ -178,7 +177,7 @@ h1 em, h2 em { color: var(--sand); font-weight: 500; }
 .modal-arrow { width: 52px; height: 52px; font-size: 19px; }
 
 footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr auto; gap: 40px; align-items: center; padding: 45px 5vw; background: #1b211c; color: #aaa79f; font-size: 10px; }
-.footer-brand { color: white; }
+.footer-brand .brand-logo-frame { width: 112px; height: 92px; }
 .footer-links { display: flex; gap: 20px; }
 .footer-links a { transition: color .25s ease; }
 .footer-links a:hover { color: var(--sand); }
@@ -234,7 +233,8 @@ footer { display: grid; grid-template-columns: 1fr 1.5fr 1fr auto; gap: 40px; al
 }
 
 @media (max-width: 520px) {
-  .brand-name { font-size: 17px; }
+  .brand-logo-frame { width: 84px; height: 66px; }
+  .site-header.scrolled .brand-logo-frame { width: 72px; height: 56px; }
   .hero-content { padding-top: 21vh; }
   .hero-content h1 br { display: none; }
   .button { min-width: 100%; }
