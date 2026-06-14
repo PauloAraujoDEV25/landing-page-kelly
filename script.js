@@ -86,7 +86,7 @@ function showSlide(index) {
 function startCarousel() {
   clearInterval(carouselTimer);
   if (!document.hidden && !reduceMotion.matches) {
-    carouselTimer = setInterval(() => showSlide(activeSlide + 1), 6000);
+    carouselTimer = setInterval(() => showSlide(activeSlide + 1), 2000);
   }
 }
 
