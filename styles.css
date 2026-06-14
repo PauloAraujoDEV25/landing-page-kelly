@@ -41,7 +41,7 @@ button:focus-visible, a:focus-visible, [role="button"]:focus-visible, input:focu
 .main-nav { display: flex; align-items: center; gap: 34px; font-size: 13px; }
 .main-nav > a:not(.nav-cta) { position: relative; }
 .main-nav > a:not(.nav-cta)::after { content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 1px; background: currentColor; transition: width .25s; }
-.main-nav > a:hover::after { width: 100%; }
+.main-nav > a:hover::after, .main-nav > a.current::after { width: 100%; }
 .nav-cta { border: 1px solid rgba(255,255,255,.55); padding: 13px 18px; transition: background .3s ease, color .3s ease, border-color .3s ease; }
 .scrolled .nav-cta { border-color: var(--line); }
 .nav-cta:hover { color: var(--forest); background: var(--paper); border-color: var(--paper); }
@@ -149,6 +149,7 @@ h1 em, h2 em { color: var(--sand); font-weight: 500; }
 .lead-form input:focus, .lead-form select:focus, .lead-form textarea:focus { border-color: var(--ink); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
 .lead-form .button { margin-top: 5px; width: 100%; }
+.lead-form .button:disabled { cursor: default; }
 .form-feedback { margin: 14px 0 0; font-size: 11px; text-align: center; }
 .lead-form label { position: relative; transition: color .3s ease; }
 .lead-form label:focus-within { color: var(--clay); }
